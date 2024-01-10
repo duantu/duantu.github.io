@@ -34,7 +34,7 @@
         }
 
         nav a:first-child {
-            margin-left: 6%; /* Use percentage for responsiveness */
+            margin-left: 10%; /* Use percentage for responsiveness */
         }
 
         nav a:hover {
@@ -44,6 +44,25 @@
         nav a.active {
             background-color: #dddddd;
             padding: 0.3% 1%
+        }
+
+        nav bb {
+            text-decoration: none;
+            color: black; /* Light grey color */
+            font-size: 1vw;
+            font-weight: normal; /* Non-bold */
+            margin-left: 20%; /* Use percentage for responsiveness */
+
+            text-align: right;
+        }
+
+        nav c {
+            text-decoration: none;
+            color: rgb(8, 42, 165); /* Light grey color */
+            font-size: 2vw;
+            font-weight: normal; /* Non-bold */
+            margin-left: 9%; /* Use percentage for responsiveness */
+            margin-right: 3%;
         }
 
        
@@ -124,11 +143,18 @@
   
 
    <nav>
+        <c><b>Duan Tu</b></c>
         <a href="#home" class="active" onclick="setActive(this)">Home</a>
         <a href="#research" onclick="setActive(this)">Research</a>
         <a href="#teaching" onclick="setActive(this)">Teaching</a>
         <a href="#cv" onclick="setActive(this)">CV</a>
+        <bb><i>This page was last updated on 01/10/2024.</i></bb>
+        <!-- <span class="navbar-text;" text-align="right">
+          <div style = "text-align:right; margin-right: 3%;">  <i>This page was last updated on 01/10/2024.</i></div>
+        </span> -->
+    
     </nav>
+    
    
     <script>
         function setActive(element) {
@@ -142,8 +168,11 @@
           element.classList.add('active');
         }
      </script>
-
+     <br>
+    
     <section class="home" id="home">
+        
+        
         <div class="left-column">
             <img src="pic.JPG" alt="profile picture;" width="55%" style="margin-top: 10%; margin-left:30%; max-width: 100%;">
             <div style="margin-top: 3%; margin-left: 30%; text-align: justify;">
@@ -153,12 +182,10 @@
                         <p style="font-size: 1.2vw; color:black">
                             Email: dtu4 at uic dot edu<br> Office: SEO 1323
                         </p>
-                        <br>
-                        <p style="font-size:1vw"><i>This page was last updated on 12/29/2023.</i></p>
                 </div>
             </div>
         </div>
-
+        
         <div style="margin-top: 5%; margin-left: 0%; text-align: justify;">
             <p style="font-size: 1.2vw;">I am a PhD candidate at the <a class = "inline" href="https://mscs.uic.edu/">MSCS Department</a>
                 of <a class = "inline" href="https://www.uic.edu/">University of Illinois Chicago</a>. 
