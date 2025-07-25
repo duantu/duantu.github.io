@@ -30,7 +30,7 @@
   .nav-left {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   .nav-name {
@@ -64,7 +64,7 @@
 
 
     .nav-sub {
-      font-size: 0.9rem;
+      font-size: 1.2rem;
       color: black;
       margin-left: auto;
       text-align: right;
@@ -75,7 +75,7 @@
       grid-template-columns: 1fr 2fr;
       gap: 2rem;
       align-items: start;
-      padding: 6rem 2rem 2rem 2rem;
+      padding: 6rem 2rem 2rem 8rem;
       margin-top: 80px;
       min-height: 100vh;
       font-size: clamp(1rem, 1.2vw, 1.3rem);
@@ -117,7 +117,7 @@
     }
 
     section {
-      padding: 4rem 2rem;
+      padding: 4rem 8rem;
       text-align: left;
       line-height: 1.6;
       min-height: 100vh;
@@ -136,6 +136,11 @@
       margin-bottom: 1rem;
     }
 
+    h4{
+        font-size: 1.2rem;
+        color: black
+      }
+
     a.inline:link,
     a.inline:visited {
       color: rgb(8, 42, 165);
@@ -145,29 +150,15 @@
     a.inline:hover {
       color: rgba(8, 42, 165, 0.5);
     }
-@media screen and (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-right {
-    margin-left: 0;
-    margin-top: 0.5rem;
-    width: 100%;
-    text-align: left;
-  }
-
-  .nav-left {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
+    .indent {
+      padding-left: 4rem;
+    }
 
     @media screen and (max-width: 768px) {
       nav {
           flex-direction: column;
           align-items: flex-start;
+           padding: 0.5rem 1rem;
         }
 
       .nav-right {
@@ -179,7 +170,7 @@
 
       .nav-left {
           flex-direction: column;
-          gap: 0.5rem;
+          gap: 0.3rem;
         }
       
 
@@ -192,7 +183,7 @@
       section.home {
         grid-template-columns: 1fr;
         text-align: center;
-        padding-top: 5rem;
+        padding-top: 6rem;
       }
 
       .left-column {
@@ -206,18 +197,31 @@
         padding-right: 0;
       }
 
-      h2 {
-        font-size: 1.5rem;
-      }
+    h2 {
+      color: rgb(10, 29, 98);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
 
-      h3 {
+    h3 {
+      color: black;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h4{
         font-size: 1.2rem;
+        color: black
       }
 
       .nav-sub {
         margin-left: 0;
         text-align: left;
         font-size: 0.8rem;
+      }
+
+      .indent {
+         padding-left: 4rem;
       }
     }
   </style>
@@ -294,8 +298,9 @@
             (* indicates alphabetical order)
             <br>
             <br>
-            <b style="font-size: 1.4vw;">Theoretical Computer Science</b>
-            <div style="font-size: 1.2vw;">
+            <div class="indent">
+            <h3>Theoretical Computer Science</h3>
+           
             <ol>
               <li><b><a class="inline" href="https://isaim2024.cs.ou.edu/papers/ISAIM2024_Reyzin_Tu.pdf">On Sample Reuse Methods for Answering k-wise Statistical Queries.</a></b><br>
                 Lev Reyzin*, <u>Duan Tu</u>*  <br>
@@ -311,8 +316,9 @@
             </ol></div> 
             
             <br>
-            <b style="font-size: 1.4vw;">Mathematical Biology</b>
-            <div style="font-size: 1.2vw;">
+            <div class="indent">
+            <h3>Mathematical Biology</h3>
+            
             <ol>
               <li><a class="inline" href="https://pubmed.ncbi.nlm.nih.gov/32275335/"><b> 
                 Microglia Senescence Occurs in Both Substantia Nigra and Ventral Tegmental Area. </a></b>
@@ -326,8 +332,9 @@
             </ol>
             </div>
             <br>
+            
             <h3>Talks</h3>
-            <div style="font-size:1.2vw">
+            <div class="indent">
             <b>On Sample Reuse Methods for Answering k-wise Statistical Queries.</b> 
                     <ul>
                         <li>Jan 2024,  UIC Graduate Student Colloquium, Chicago, IL</li>
@@ -350,8 +357,9 @@
 
             
             <h2>Teaching </h2>
+            <div class="indent">
             <h3>Current Semester</h3>
-            <div style="font-size: 1.2vw;">
+            
             <p>In Spring 2024, I am an instructor for Math 182: Emerging Scholars Workshop for Calculus II and a TA for Math 181: Calculus II.
             </p>
             <p>My office hours are: Tuesdays 10 - 10:50am at the <a class = "inline" href="https://mslc.uic.edu/academic-support/math/"><b>Math and Science Learning Center</b>.</a> </p>
@@ -361,8 +369,8 @@
 
             
             <h3>Past Teaching</h3>
-            <div style="font-size: 1.2vw;">
-            <b>University of Illinois Chicago</b>
+            <div class = "indent">
+            <h3>University of Illinois Chicago</h3>
             <div style="line-height:1.4">
             <ul>
                 <li>Instructor</li>
@@ -393,7 +401,7 @@
     <section id="cv">
         <div style="padding-top: 0%;">
             <h2>CV</h2>
-            <div style="font-size:1.2vw">
+            <div class = "indent">
             My CV can be found <a class = "inline" href="https://duantu.github.io/Duan_Tu_CV.pdf"><b>here</b></a>.
             </div>
             
