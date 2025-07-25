@@ -2,158 +2,242 @@
 <html lang="en">
 
 <head>
-    <title>Duan Tu</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0%;
-            padding: 0%;
+  <title>Duan Tu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+  nav {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    border-bottom: 1px dashed black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-name {
+    font-size: 2rem;
+    color: black;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: rgb(8, 42, 165);
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  nav a.active {
+    background-color: #dddddd;
+    padding: 0.3rem 1rem;
+  }
+
+  nav a:hover {
+    color: rgba(8, 42, 165, 0.5);
+  }
+
+  .nav-right {
+    margin-left: auto;
+    font-size: 1.2rem;
+    color: black;
+    white-space: nowrap;
+  }
+
+
+
+    .nav-sub {
+      font-size: 0.9rem;
+      color: black;
+      margin-left: auto;
+      text-align: right;
+    }
+
+    section.home {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      align-items: start;
+      padding: 6rem 2rem 2rem 2rem;
+      margin-top: 80px;
+      min-height: 100vh;
+      font-size: clamp(1rem, 1.2vw, 1.3rem);
+    }
+
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 8rem;
+    }
+
+    .profile-img {
+      width: 60%;
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+    }
+
+    .bio-text {
+      color: rgb(10, 29, 98);
+    }
+
+    .bio-text h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .bio-text p {
+      color: black;
+      margin: 0.3rem 0;
+    }
+
+    .right-column {
+      text-align: justify;
+      line-height: 1.6;
+      padding-right: 16rem;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      text-align: left;
+      line-height: 1.6;
+      min-height: 100vh;
+      font-size: clamp(1rem, 1.2vw, 1.3rem);
+    }
+
+    h2 {
+      color: rgb(10, 29, 98);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      color: black;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    a.inline:link,
+    a.inline:visited {
+      color: rgb(8, 42, 165);
+      text-decoration: none;
+    }
+
+    a.inline:hover {
+      color: rgba(8, 42, 165, 0.5);
+    }
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-right {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+    @media screen and (max-width: 768px) {
+      nav {
+          flex-direction: column;
+          align-items: flex-start;
         }
 
-        nav {
-            background-color: white;
-            position: fixed;
-            top: 0%;
-            width: 100%;
-            text-align: left;
-            padding: 11px 2%; /* Use percentage for responsiveness */
-            z-index: 1000;
-            border-bottom:1px*100% dashed black
-        }
-        
-
-        nav a {
-            text-decoration: none;
-            color: rgb(8, 42, 165); /* Light grey color */
-            font-size: 1.6vw;
-            font-weight: normal; /* Non-bold */
-            margin-right: 2%; /* Use percentage for responsiveness */
-            cursor: pointer;
+      .nav-right {
+          margin-left: 0;
+          margin-top: 0.5rem;
+          width: 100%;
+          text-align: left;
         }
 
-        nav a:first-child {
-            margin-left: 10%; /* Use percentage for responsiveness */
+      .nav-left {
+          flex-direction: column;
+          gap: 0.5rem;
         }
+      
 
-        nav a:hover {
-            color: rgba(8, 42, 165,0.5); /* White color on hover */
-        }
+      nav a {
+        margin: 0.3rem 0;
+        display: block;
+        font-size: 1.2rem;
+      }
 
-        nav a.active {
-            background-color: #dddddd;
-            padding: 0.3% 1%
-        }
+      section.home {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 5rem;
+      }
 
-        nav bb {
-            text-decoration: none;
-            color: black; /* Light grey color */
-            font-size: 1vw;
-            font-weight: normal; /* Non-bold */
-            margin-left: 20%; /* Use percentage for responsiveness */
+      .left-column {
+        align-items: center;
+        padding-left: 0;
+      }
 
-            text-align: right;
-        }
-
-        nav c {
-            text-decoration: none;
-            color: rgb(8, 42, 165); /* Light grey color */
-            font-size: 2vw;
-            font-weight: normal; /* Non-bold */
-            margin-left: 9%; /* Use percentage for responsiveness */
-            margin-right: 3%;
-        }
-
-       
-
-        section.home {
-            
-            padding: 6% 2%; /* Use percentage for responsiveness */
-            display: grid;
-            grid-template-columns: 30% 60%; /* Use percentage for responsiveness */
-            gap: 0; /* Use percentage for responsiveness */
-            line-height: 1.4;
-            height: 100vh
-        }
-
-        
-
-        .left-column {
-            display: flex;
-            flex-direction: column;
-            height: 100%; /* Use height: 100% for full height */
-        }
-
-        .left-column img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 1%;
-        }
-
-        section {
-        padding: 4% 10%; /* Use percentage for responsiveness */
+      .right-column {
         text-align: left;
-        line-height: 1.4;
-        height: 100vh
-        }
+        margin-top: 2rem;
+        padding-right: 0;
+      }
 
-        h2 {
-            text-align: left;
-            color: rgb(10,29,98);
-            font-size: 1.8vw;
-        }
+      h2 {
+        font-size: 1.5rem;
+      }
 
-        h3 {
-            text-align: left;
-            color: black;
-            font-size: 1.4vw;
-        }
-        
-        /*--inline hyperlink*/
-        a.inline:link {color:rgb(8, 42, 165); text-decoration:none;}
-        a.inline:visited {color:rgb(8, 42, 165);}
-        a.inline:hover {color:rgba(8, 42, 165, 0.5);}
+      h3 {
+        font-size: 1.2rem;
+      }
 
-        
-        /* Additional styles for responsiveness */
-        @media screen and (max-width: 768px) {
-            section.home {
-                grid-template-columns: 100%; /* On small screens, switch to a single column */
-            }
-
-            nav a {
-                margin-right: 0; /* Remove right margin on small screens */
-                margin-bottom: 5%; /* Add bottom margin for better spacing */
-                display: block; /* Display as block for full width on small screens */
-            }
-
-            nav a:first-child {
-                margin-left: 0; /* Remove left margin on small screens */
-            }
-
-            .left-column img {
-                margin-left: 0; /* Adjust margin for image on small screens */
-            }
-        }
-    </style>
+      .nav-sub {
+        margin-left: 0;
+        text-align: left;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
   
-
    <nav>
-        <c><b>Duan Tu</b></c>
-        <a href="#home" class="active" onclick="setActive(this)">Home</a>
-        <a href="#research" onclick="setActive(this)">Research</a>
-        <a href="#teaching" onclick="setActive(this)">Teaching</a>
-        <a href="#cv" onclick="setActive(this)">CV</a>
-        <bb><i>This page was last updated on 01/10/2024.</i></bb>
-        <!-- <span class="navbar-text;" text-align="right">
-          <div style = "text-align:right; margin-right: 3%;">  <i>This page was last updated on 01/10/2024.</i></div>
-        </span> -->
-    
-    </nav>
+    <div class="nav-left">
+    <span class="nav-name"><b>Duan Tu</b></span>
+    <a href="#home" class="active" onclick="setActive(this)">Home</a>
+    <a href="#research" onclick="setActive(this)">Research</a>
+    <a href="#teaching" onclick="setActive(this)">Teaching</a>
+    <a href="#cv" onclick="setActive(this)">CV</a>
+  </div>
+
+  <div class="nav-right">
+    <i>This page was last updated on 01/10/2024.</i>
+  </div>
+</nav>
     
    
     <script>
@@ -170,39 +254,36 @@
      </script>
      <br>
     
-    <section class="home" id="home">
-        
-        
-        <div class="left-column">
-            <img src="pic.JPG" alt="profile picture;" width="55%" style="margin-top: 10%; margin-left:30%; max-width: 100%;">
-            <div style="margin-top: 3%; margin-left: 30%; text-align: justify;">
-                <div style="font-family: 'Arial', sans-serif; font-size: 2.5vw;color: rgb(10,29,98);">
-                    <b>Duan Tu | 涂端</b>
-                    <p style="font-size: 1.2vw;color:black"><b>Pronouns: she/her/hers</b>
-                        <p style="font-size: 1.2vw; color:black">
-                            Email: dtu4 at uic dot edu<br> Office: SEO 1323
-                        </p>
-                </div>
-            </div>
-        </div>
-        
-        <div style="margin-top: 5%; margin-left: 0%; text-align: justify;">
-            <p style="font-size: 1.2vw;">I am a PhD candidate at the <a class = "inline" href="https://mscs.uic.edu/">MSCS Department</a>
-                of <a class = "inline" href="https://www.uic.edu/">University of Illinois Chicago</a>. 
-                I am fortunate to be advised by <a class = "inline" href="https://www.levreyzin.com/">Lev Reyzin</a>.
-                My area of focus is <a class = "inline" href="https://homepages.math.uic.edu/~mcs/index.html/">Mathematical Computer Science</a> 
-                and I am particularly interested in machine learning theory, combinatorial optimization, and application of
-                probability theory in theoretical computer science.
-            </p>
+   <section class="home" id="home">
+  <div class="left-column">
+    <img src="pic.JPG" alt="profile picture" class="profile-img">
+    <div class="bio-text">
+      <h2>Duan Tu | 涂端</h2>
+      <p><strong>Pronouns: she/her/hers</strong></p>
+      <p>Email: dtu4 at uic dot edu<br> Office: SEO 1323</p>
+    </div>
+  </div>
 
-            <p style="font-size: 1.2vw;"> 
-              In Fall 2023 &#8211
-              Spring 2024, I am co-organizing the <a class="inline" href="https://www.math.uic.edu/persisting_utilities/seminars/schedule_by_topic?code=CST">UIC CS Theory Seminar</a> 
-              with <a class = "inline" href="https://www.math.uic.edu/persisting_utilities/people/profile?netid=kdubin3">Karoline Dubin.</a> 
-              Please shoot us an email if you have any suggestions for topics / speakers!  
-            </p>
-        </div>
-    </section>
+  <div class="right-column">
+    <p>
+      I am a PhD candidate at the
+      <a class="inline" href="https://mscs.uic.edu/">MSCS Department</a>
+      of the <a class="inline" href="https://www.uic.edu/">University of Illinois Chicago</a>. 
+      I am fortunate to be advised by <a class="inline" href="https://www.levreyzin.com/">Lev Reyzin</a>.
+      My area of focus is 
+      <a class="inline" href="https://homepages.math.uic.edu/~mcs/index.html/">Mathematical Computer Science</a>, and I am particularly interested in machine learning theory, combinatorial optimization, and applications of probability theory in theoretical computer science.
+    </p>
+
+    <p>
+      In Fall 2023 – Spring 2024, I am co-organizing the 
+      <a class="inline" href="https://www.math.uic.edu/persisting_utilities/seminars/schedule_by_topic?code=CST">UIC CS Theory Seminar</a> 
+      with 
+      <a class="inline" href="https://www.math.uic.edu/persisting_utilities/people/profile?netid=kdubin3">Karoline Dubin</a>.
+      Please shoot us an email if you have any suggestions for topics/speakers!
+    </p>
+  </div>
+</section>
+
 
     <section id="research">
         
@@ -265,7 +346,7 @@
     </section>
 
     <section id="teaching">
-        <div style="padding-top: 10%;">
+        <div style="padding-top: 0%;">
 
             
             <h2>Teaching </h2>
