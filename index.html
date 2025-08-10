@@ -1,413 +1,174 @@
-<!DOCTYPE html>
-<html lang="en">
 
+
+<html>
 <head>
   <title>Duan Tu</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style type="text/css">
+    		body{
+    		    line-height: 1.5;
+    		    padding: 4em 1em;
+    		    width:1000px;
+    		    margin-left:auto;
+    		    margin-right:auto;
+		    font-size:1.5em;
+    		}
+	
+		a {
+	  color: rgb(8, 42, 165);
+	  text-decoration: none;
+	}
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-  nav {
-    display: flex;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: white;
-    border-bottom: 1px dashed black;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-  }
+		a:hover { 
+		  color: rgba(8, 42, 165, 0.5);
+		}
 
-  .nav-left {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
+</style>
 
-  .nav-name {
-    font-size: 2rem;
-    color: black;
-  }
-
-  nav a {
-    text-decoration: none;
-    color: rgb(8, 42, 165);
-    font-size: 2rem;
-    cursor: pointer;
-  }
-
-  nav a.active {
-    background-color: #dddddd;
-    padding: 0.3rem 1rem;
-  }
-
-  nav a:hover {
-    color: rgba(8, 42, 165, 0.5);
-  }
-
-  .nav-right {
-    margin-left: auto;
-    font-size: 1.2rem;
-    color: black;
-    white-space: nowrap;
-  }
-
-
-
-    .nav-sub {
-      font-size: 1.2rem;
-      color: black;
-      margin-left: auto;
-      text-align: right;
-    }
-
-    section.home {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2rem;
-      align-items: start;
-      padding: 6rem 2rem 2rem 8rem;
-      margin-top: 80px;
-      min-height: 100vh;
-      font-size: clamp(1rem, 1.2vw, 1.3rem);
-    }
-
-    .left-column {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding-left: 8rem;
-    }
-
-    .profile-img {
-      width: 60%;
-      max-width: 200px;
-      height: auto;
-      margin-bottom: 1rem;
-      border-radius: 5px;
-    }
-
-    .bio-text {
-      color: rgb(10, 29, 98);
-    }
-
-    .bio-text h2 {
-      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-      margin-bottom: 0.5rem;
-    }
-
-    .bio-text p {
-      color: black;
-      margin: 0.3rem 0;
-    }
-
-    .right-column {
-      text-align: justify;
-      line-height: 1.6;
-      padding-right: 16rem;
-    }
-
-    section {
-      padding: 4rem 8rem;
-      text-align: left;
-      line-height: 1.6;
-      min-height: 100vh;
-      font-size: clamp(1rem, 1.2vw, 1.3rem);
-    }
-
-    h2 {
-      color: rgb(10, 29, 98);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    h3 {
-      color: black;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    h4{
-        font-size: 1.2rem;
-        color: black
-      }
-
-    a.inline:link,
-    a.inline:visited {
-      color: rgb(8, 42, 165);
-      text-decoration: none;
-    }
-
-    a.inline:hover {
-      color: rgba(8, 42, 165, 0.5);
-    }
-    .indent {
-      padding-left: 4rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      nav {
-          flex-direction: column;
-          align-items: flex-start;
-           padding: 0.5rem 1rem;
-        }
-
-      .nav-right {
-          margin-left: 0;
-          margin-top: 0.5rem;
-          width: 100%;
-          text-align: left;
-        }
-
-      .nav-left {
-          flex-direction: column;
-          gap: 0.3rem;
-        }
-      
-
-      nav a {
-        margin: 0.3rem 0;
-        display: block;
-        font-size: 1.2rem;
-      }
-
-      section.home {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 6rem;
-      }
-
-      .left-column {
-        align-items: center;
-        padding-left: 0;
-      }
-
-      .right-column {
-        text-align: left;
-        margin-top: 2rem;
-        padding-right: 0;
-      }
-
-    h2 {
-      color: rgb(10, 29, 98);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    h3 {
-      color: black;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    h4{
-        font-size: 1.2rem;
-        color: black
-      }
-
-      .nav-sub {
-        margin-left: 0;
-        text-align: left;
-        font-size: 0.8rem;
-      }
-
-      .indent {
-         padding-left: 4rem;
-      }
-    }
-  </style>
+<link rel="stylesheet" type="text/css" />
+<meta name="keywords" content="">  
+    <script type="text/javascript"
+         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&delayStartupUntilConfig"></script>
+	 <script src="./local-mathjax-macros.js"></script>
+<script src="https://www.w3counter.com/tracker.js?id=135788"></script>
 </head>
-
 <body>
-  
-   <nav>
-    <div class="nav-left">
-    <span class="nav-name"><b>Duan Tu</b></span>
-    <a href="#home" class="active" onclick="setActive(this)">Home</a>
-    <a href="#research" onclick="setActive(this)">Research</a>
-    <a href="#teaching" onclick="setActive(this)">Teaching</a>
-    <a href="#cv" onclick="setActive(this)">CV</a>
-  </div>
+<h1>Duan Tu | 涂端</h1>
+<table>
+	<td> <img width=300px src="pic.jpg"></td>
+	<td style="padding-left:50px;max-width:500px; font-size:1.5em"> 
+		<br/> <br/> Department of Mathematics, Statistics, and Computer Science, University of Illinois Chicago
+		<br/>  Office: SEO 1323
+		<br/> Email: &nbsp; <tt> dtu4 at uic dot edu </tt>
+    <br/>  Pronouns: she/her/hers
+	<br>
+	<br/> <em>This website was last updated on 7/28/2025.</em>
 
-  <div class="nav-right">
-    <i>This page was last updated on 01/10/2024.</i>
-  </div>
-</nav>
-    
-   
-    <script>
-        function setActive(element) {
-          // Remove 'active' class from all links
-          var links = document.getElementsByTagName('a');
-          for (var i = 0; i < links.length; i++) {
-            links[i].classList.remove('active');
-          }
-      
-          // Add 'active' class to the clicked link
-          element.classList.add('active');
-        }
-     </script>
-     <br>
-    
-   <section class="home" id="home">
-  <div class="left-column">
-    <img src="pic.JPG" alt="profile picture" class="profile-img">
-    <div class="bio-text">
-      <h2>Duan Tu | 涂端</h2>
-      <p><strong>Pronouns: she/her/hers</strong></p>
-      <p>Email: dtu4 at uic dot edu<br> Office: SEO 1323</p>
-    </div>
-  </div>
-
-  <div class="right-column">
-    <p>
-      I am a PhD candidate at the
+	</td>
+</table>
+<br>
+I am a PhD candidate at the
       <a class="inline" href="https://mscs.uic.edu/">MSCS Department</a>
       of the <a class="inline" href="https://www.uic.edu/">University of Illinois Chicago</a>. 
       I am fortunate to be advised by <a class="inline" href="https://www.levreyzin.com/">Lev Reyzin</a>.
-      My area of focus is 
-      <a class="inline" href="https://homepages.math.uic.edu/~mcs/index.html/">Mathematical Computer Science</a>, and I am particularly interested in machine learning theory, combinatorial optimization, and applications of probability theory in theoretical computer science.
-    </p>
+      I am part of the 
+      <a class="inline" href="https://homepages.math.uic.edu/~mcs/">Mathematical Computer Science</a> group, and my research focuses on using combinatorics and probability theory to study theoretical computer science problems.
+	  Recently, I also started to learn about and work on problems in deep learning. I am currently on the job market.
+	<br>
+	
+	<br>
+	Before UIC, I was an undergraduate student at the <a class="inline" href="https://www.ufl.edu/">University of Florida</a>, where I majored in <a class="inline" href="https://math.ufl.edu/">math</a> and did a minor in violin performance.
+	And before that, I attended the <a class="inline" href="https://www.uwc-usa.org/">United World College, USA</a> in Montezuma, NM. 
+	<br>
+	<br>
+	My CV can be found <a class="inline" href="https://duantu.github.io/Duan_Tu_CV.pdf">here</a>.
+	
 
-    <p>
-      In Fall 2023 – Spring 2024, I am co-organizing the 
-      <a class="inline" href="https://www.math.uic.edu/persisting_utilities/seminars/schedule_by_topic?code=CST">UIC CS Theory Seminar</a> 
-      with 
-      <a class="inline" href="https://www.math.uic.edu/persisting_utilities/people/profile?netid=kdubin3">Karoline Dubin</a>.
-      Please shoot us an email if you have any suggestions for topics/speakers!
-    </p>
-  </div>
-</section>
+
+<h2>News</h2>
+I will be attending the <a href="https://mlschool.princeton.edu/"> Machine Learning Theory Summer School </a> at Princeton August 12 - 21, 2025.
 
 
-    <section id="research">
-        
-        <div style=" padding-top: 0%;">
-            <h2>Research</h2>
-            
-            <h3>Papers </h3>
-            (* indicates alphabetical order)
-            <br>
-            <br>
-            <div class="indent">
-            <h3>Theoretical Computer Science</h3>
-           
-            <ol>
-              <li><b><a class="inline" href="https://isaim2024.cs.ou.edu/papers/ISAIM2024_Reyzin_Tu.pdf">On Sample Reuse Methods for Answering k-wise Statistical Queries.</a></b><br>
-                Lev Reyzin*, <u>Duan Tu</u>*  <br>
-              In <i>18th International Symposium on Artificial Intelligence and Mathematics</i>  (ISAIM), 2024.</li>
-              
-              <br>
-              <li><b>Johnson-Lindenstrauss Lemma on Sparse Graphs.</b> 
-                <br> Joint with Vishesh Jain. <i>In preperation. </i><br>
+	
+<h2>Research </h2>
 
-                <br>
-                <li><b>Efficient Synthetic Data Generator.</b> 
-                  <br> Joint with Lev Reyzin. <i>In preperation. </i><br>
-            </ol></div> 
-            
-            <br>
-            <div class="indent">
-            <h3>Mathematical Biology</h3>
-            
-            <ol>
-              <li><a class="inline" href="https://pubmed.ncbi.nlm.nih.gov/32275335/"><b> 
-                Microglia Senescence Occurs in Both Substantia Nigra and Ventral Tegmental Area. </a></b>
-                <br>
-                Fatemeh Shaerzadeh, 
-                Leah Phan, Douglas Miller, Maxwell Dacquel, William Hachmeister, 
-                Carissa Hansen, Alexandra Bechtle, <u>Duan Tu</u>, Maia Martcheva, Thomas Foster, Ashok Kumar, 
-                Wolfgang Streit, Habibeh Khoshbouei.<br>
-                <i> Glia.</i> 2020;68 (11), 2228-2245.</li>
-              
-            </ol>
-            </div>
-            <br>
-            
-            <h3>Talks</h3>
-            <div class="indent">
-            <b>On Sample Reuse Methods for Answering k-wise Statistical Queries.</b> 
-                    <ul>
-                        <li>Jan 2024,  UIC Graduate Student Colloquium, Chicago, IL</li>
-                        <li>Jan 2024,  ISAIM 2024, Fort Lauderdale, FL</li>
-                        <li>July, 2023, SLMath: Mathematics of Big Data: Sketching and (Multi-) Linear Algebra SLMath Summer Graduate School, IBM Research Almaden, CA</li> 
-                    </ul>
+(* indicates alphabetical order)
+<h3>Theoretical Computer Science</h3>
+	<ol>
+	<li><em> On Sample Reuse Methods for Answering k-wise Statistical Queries.</em>
+			<br>
+			Lev Reyzin*, <u>Duan Tu</u>*.  
+			<br>
+            18th International Symposium on Artificial Intelligence and Mathematics  (ISAIM 2024).<a href="https://isaim2024.cs.ou.edu/papers/ISAIM2024_Reyzin_Tu.pdf">[Conference]</a>
+			<br>
+			Invited to submit to Annals of Mathematics and Artificial Intelligence (AMAI) special issue on ISAIM 2024. 
+			<br>
+			Presentations:
+			<ul>
+                <li>Jan 2024,  UIC Graduate Student Colloquium, Chicago, IL</li>
+                <li>Jan 2024,  ISAIM 2024, Fort Lauderdale, FL</li>
+                <li>July, 2023, SLMath: Mathematics of Big Data: Sketching and (Multi-) Linear Algebra SLMath Summer Graduate School, IBM Research Almaden, CA</li> 
+            </ul>
+	</li>
+	<br>
+	<li><em> On Lower Bounds For Local Versions of Metric Embeddings.</em>
+			<br>
+			Vishesh Jain*, <u>Duan Tu</u>*.  
+			<br>
+            Submitted.
+	</li>
+	<br>
+	<li><em> Efficient Base Synopsis Generator for Private Data Release.</em>
+			<br>
+			Lev Reyzin*, <u>Duan Tu</u>*.  
+			<br>
+            In preparation.
+	</li>
+	
+	</ol>
 
-            <b>Modeling Cell Population and Morphology of Microglia and Dopamine Neurons in the Midbrain of Mice During Aging.</b>
-                    <ul>
-                        <li>Nov 2019, NIMBioS Annual Undergraduate Research Conference, UT Knoxville, TN</li>
-                    </ul>
-            
-            </div>
-        </div>
-        
-    </section>
+<h3>Mathematical Biology</h3>
+	<ol>
+	<li><em>Microglia Senescence Occurs in Both Substantia Nigra and Ventral Tegmental Area.</em>
+			<br>
+			Fatemeh Shaerzadeh, Leah Phan, Douglas Miller, Maxwell Dacquel, William Hachmeister, Carissa Hansen, Alexandra Bechtle, <u>Duan Tu</u>, Maia Martcheva, Thomas Foster, Ashok Kumar, Wolfgang Streit, Habibeh Khoshbouei.
+			<br>
+            <i> Glia.</i> 2020;68 (11), 2228-2245. <a href="https://pubmed.ncbi.nlm.nih.gov/32275335/">[Journal]</a>
+			<br>
+			Presentations:
+			<ul>
+                <li>Nov 2019, NIMBioS Annual Undergraduate Research Conference, UT Knoxville, TN</li>
+            </ul>
 
-    <section id="teaching">
-        <div style="padding-top: 0%;">
+	</li>
+	</ol>
 
-            
-            <h2>Teaching </h2>
-            <div class="indent">
-            <h3>Current Semester</h3>
-            
-            <p>In Spring 2024, I am an instructor for Math 182: Emerging Scholars Workshop for Calculus II and a TA for Math 181: Calculus II.
-            </p>
-            <p>My office hours are: Tuesdays 10 - 10:50am at the <a class = "inline" href="https://mslc.uic.edu/academic-support/math/"><b>Math and Science Learning Center</b>.</a> </p>
-            <br>
-            </div>
-        
 
-            
-            <h3>Past Teaching</h3>
-            <div class = "indent">
-            <h3>University of Illinois Chicago</h3>
+<h2>Teaching and Mentoring</h2>
+<h3>University of Illinois Chicago</h3>
             <div style="line-height:1.4">
             <ul>
                 <li>Instructor</li>
                     <ul>
-                        <li>Math 182 Emerging Scholars Workshop for Calculus II: Sp '24</li>
+                        <li>Math 182 Emerging Scholars Workshop for Calculus II: Spring '24</li>
                     </ul>
-                    <br>
+				<li>Directed Reading Program Mentor</li>
+                    <ul>
+						<li>Topic: PAC Learning and SVM​. Spring '25. 
+							<br>
+							Material:  
+							Chapters 1-3, & 7 of <a href="https://cs.nyu.edu/~mohri/mlbook/">Mohri, M., Rostamizadeh, A., & Talwalkar, A. <em>Foundations of Machine Learning.</em></a>
+						</li>
+						<li>Topic: Basics of differential privacy​. Fall '24' 
+							<br>
+							Material: Chapters 1-3 of <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">Dwork, C., & Roth, A. (2014). <em>The Algorithmic Foundations of Differential Privacy.</em> </a>
+						</li>
+                        <li>Topic: Machine learning guarantees and dimension reduction​. Spring '24. 
+							<br>
+							Material:  
+							Chapters 1-3, & 15 of <a href="https://cs.nyu.edu/~mohri/mlbook/">Mohri, M., Rostamizadeh, A., & Talwalkar, A. <em>Foundations of Machine Learning.</em></a>
+						</li>
+						
+						
+                    </ul>
                 <li>Teaching Assistant</li> 
                     <ul>
-                        <li>Math 181 Calculus II: Sp '23, Fa '23, Sp '24 </li>
-                        <li>Math 180 Calculus I: Fa '20, Sp '21, Sp '22</li>
-                        <li>Math 110 College Algebra: Fa '21</li>
-                        <li>Math 105 Mathematical Reasoning: Fa '22</li>
+                        <li>Math 181 Calculus II: Spring '23, Fall '23, Spring '24 </li>
+                        <li>Math 180 Calculus I: Fall '20, Spring '21, Spring '22</li>
+                        <li>Math 110 College Algebra: Fall '21</li>
+                        <li>Math 105 Mathematical Reasoning: Fall '22</li>
                     </ul>
                     <br>
                 <li>Grader</li>
                     <ul>
-                        <li>STAT 401 Introduction to Probability: Fa '23</li>
+                        <li>STAT 401 Introduction to Probability: Fall '23</li>
                     </ul>
             </ul>
             </div>
 
+<ul>
+</ul>
 
-            </div>
-        </div>
-    </section>
-
-    <section id="cv">
-        <div style="padding-top: 0%;">
-            <h2>CV</h2>
-            <div class = "indent">
-            My CV can be found <a class = "inline" href="https://duantu.github.io/Duan_Tu_CV.pdf"><b>here</b></a>.
-            </div>
-            
-        </div>
-    </section>
-
+	
 </body>
-
 </html>
+
